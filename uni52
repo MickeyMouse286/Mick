@@ -1,0 +1,17 @@
+import copy
+n,m = map(int,input().split()) 
+a=[] 
+b=[]
+for i in range (n): 
+   a.append(list(map(int, input().split())))
+b = copy.deepcopy(a)
+a[0][0] = 100
+for i in range (n):
+   for j in range (m):
+      if a[i][j] == 0:
+         for t in range(n):
+            b[t][j] = 0
+         for t in range(m):
+            b[i][t] = 0
+a = copy.deepcopy(b)   
+for l in a: print(*l, sep='\t')
